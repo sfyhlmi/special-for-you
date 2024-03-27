@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WARNING!!!!</title>
+    <style>
+        body {
+            background-color: #2a0000; /* Dark red background */
+            color: #ff0000; /* Blood red color for text */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        .warning-title {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .skull-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+            animation: pulse 1s infinite alternate;
+        }
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+        .warning-message {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            animation: glow 1s infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+            }
+            to {
+                text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="warning-title">WARNING!</h1>
+        <span class="skull-icon">💀</span>
+        <p class="warning-message">IF YOU CLICK THIS BUTTON, YOU ARE ABOUT TO DIE SOON</p>
+    </div>
+</body>
+</html>

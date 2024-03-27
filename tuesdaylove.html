@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUESDAY</title>
+    <style>
+        body {
+            background-color: #ffe6e6; /* Light pink background */
+            color: #ff69b4; /* Pink color for text */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .love-letter {
+            font-size: 1.2em;
+            line-height: 1.5;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        .signature {
+            font-weight: bold;
+            color: #ff1493; /* Darker pink for signature */
+        }
+        .heart-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            animation: floating-hearts 10s linear infinite;
+        }
+        @keyframes floating-hearts {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-100vh) rotate(360deg);
+            }
+            100% {
+                transform: translateY(0) rotate(720deg);
+            }
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff1493; /* Heart color */
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            animation: floating 5s linear infinite;
+        }
+        @keyframes floating {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-50vh) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+        .heart:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+        .heart:nth-child(2) {
+            left: 20%;
+            animation-delay: 1s;
+        }
+        .heart:nth-child(3) {
+            left: 30%;
+            animation-delay: 2s;
+        }
+        .heart:nth-child(4) {
+            left: 40%;
+            animation-delay: 3s;
+        }
+        .heart:nth-child(5) {
+            left: 50%;
+            animation-delay: 4s;
+        }
+        .heart:nth-child(6) {
+            left: 60%;
+            animation-delay: 5s;
+        }
+        .heart:nth-child(7) {
+            left: 70%;
+            animation-delay: 6s;
+        }
+        .heart:nth-child(8) {
+            left: 80%;
+            animation-delay: 7s;
+        }
+        .heart:nth-child(9) {
+            left: 90%;
+            animation-delay: 8s;
+        }
+		 .love-logo {
+            position: absolute;
+            top: 20px;
+            left: calc(50% - 50px); /* Adjust position horizontally */
+            width: 100px; /* Adjust size as needed */
+            height: auto;
+            z-index: 1;
+            border-radius: 50%;
+            border: 5px solid #ff69b4; /* Pink border */
+        }
+    </style>
+</head>
+<body>
+	<img class="love-logo" src="C:\xampp\htdocs\5.jpeg" alt="Love Logo">
+    <div class="container">
+        <div class="love-letter">
+            <p><strong>Tuesday:</strong> I'm grateful for the love story we're writing together, filled with unforgettable moments and cherished memories. Thank you for being my partner, my love and my future in this journey called life.</p>
+            <p>I love you, <span class="signature">Syamil Afiq</span> <3</p>
+        </div>
+    </div>
+    <div class="heart-container">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+</body>
+</html>

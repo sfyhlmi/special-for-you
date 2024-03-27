@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Day, One Affirmation</title>
+    <style>
+        body {
+            background-color: #fdeff0; /* Soft pink background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            color: #ffffff; /* White font color */
+        }
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .title {
+            font-size: 3em;
+            color: #ff69b4; /* Pink color for text */
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: pulse 2s infinite alternate;
+        }
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+        .days-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            font-weight: bold;
+        }
+        .days-button {
+            background-color: #ff1493; /* Dark pink button */
+            color: #ffffff; /* White font color */
+            font-size: 1em;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 30px;
+            text-decoration: none;
+            margin: 10px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            overflow: hidden;
+        }
+        .days-button:hover {
+            background-color: #ff69b4; /* Lighter pink on hover */
+            transform: scale(1.05);
+        }
+        .days-button span {
+            display: block;
+            position: relative;
+            backface-visibility: hidden;
+            transition: transform 0.3s;
+            color: #ffffff; /* White font color */
+        }
+        .days-button:hover span {
+            transform: rotateY(180deg);
+        }
+        .days-button span::before {
+            content: attr(data-text);
+            position: absolute;
+            color: #ffffff; /* White font color */
+            transition: color 0.3s;
+        }
+        .days-button:hover span::before {
+            color: #fff; /* White color on hover */
+        }
+        .hearts-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff69b4;
+            transform: rotate(45deg);
+            border-radius: 50%;
+            animation: float 5s infinite ease-in-out;
+            pointer-events: none;
+        }
+        .heart::after,
+        .heart::before {
+            content: '';
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background-color: inherit;
+            border-radius: inherit;
+        }
+        .heart::before {
+            left: -15px;
+            top: 0;
+        }
+        .heart::after {
+            left: 0;
+            top: -15px;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">One Day, One Affirmation</h1>
+        <p>Click on what day is today, sayang?</p>
+        <div class="days-container">
+            <a href="sundaylove.html" class="days-button">
+                <span data-text="Sunday">Sunday</span>
+            </a>
+            <a href="mondaylove.html" class="days-button">
+                <span data-text="Monday">Monday</span>
+            </a>
+            <a href="tuesdaylove.html" class="days-button">
+                <span data-text="Tuesday">Tuesday</span>
+            </a>
+            <a href="wednesdaylove.html" class="days-button">
+                <span data-text="Wednesday">Wednesday</span>
+            </a>
+            <a href="thursdaylove.html" class="days-button">
+                <span data-text="Thursday">Thursday</span>
+            </a>
+            <a href="fridaylove.html" class="days-button">
+                <span data-text="Friday">Friday</span>
+            </a>
+            <a href="saturdaylove.html" class="days-button">
+                <span data-text="Saturday">Saturday</span>
+            </a>
+        </div>
+    </div>
+    <div class="hearts-container">
+        <!-- Generate hearts dynamically using JavaScript -->
+    </div>
+    <script>
+        function createHearts() {
+            const container = document.querySelector('.hearts-container');
+            const numHearts = 30;
+            for (let i = 0; i < numHearts; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                const size = Math.random() * 20 + 10;
+                heart.style.width = `${size}px`;
+                heart.style.height = `${size}px`;
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+                container.appendChild(heart);
+            }
+        }
+        createHearts();
+    </script>
+</body>
+</html>
